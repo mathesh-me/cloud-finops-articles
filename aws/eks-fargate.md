@@ -55,7 +55,7 @@ and so on...
 
 ### Some real time examples:
 
-Let's Consider two different scenarios to understand how Fargate can save the cost effectively.C And also, we'll see when we can't use Fargate so that we can choose the right option based on our requirements.
+Let's Consider two different scenarios to understand how Fargate can save the cost effectively. We will also see where we can't use Fargate, So that we can choose the right option based on our requirements.<br>
 
 I will show you how to calculate the Cost for both Fargate and Worker Nodes in each scenario using [AWS Pricing Calculator](https://calculator.aws.amazon.com/) at the end of this article. But for now just look at the amount that we need to pay for each option. If you don't understand the math behind the cost calculation, don't worry. You can easily get it using the AWS Pricing Calculator.
 
@@ -163,7 +163,7 @@ Navigate to [AWS Pricing Calculator](https://calculator.aws.amazon.com/)
 
 ![Screenshot 2024-10-20 153957](https://github.com/user-attachments/assets/d529274a-5b9b-47fd-ae2e-f20770b473b9)
 
-**You can see Per month Cost for EKS Cluster at the Left bottom**<br>
+**You can see Per month Cost for EKS Cluster Control Plane at the Left bottom**<br>
 
 **Let's add Fargate to our Estimate now, I am going to configure my Pod resources(CPU, Memory) based on the Scenarios we considered.**
 
