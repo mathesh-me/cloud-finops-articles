@@ -5,7 +5,7 @@ In today's world, where many organizations are moving towards cloud and containe
 ![Faragate vs Worker Nodes](https://github.com/user-attachments/assets/d532ed5f-2261-47cb-9d1c-d9e3cf356fa8)
 
 Before get into the cost saving techniques, I like to explain some basic concepts of EKS and Fargate.
-
+ 
 ### What is EKS?
 
 ***Amazon Elastic Kubernetes Service (Amazon EKS) is a managed Kubernetes service by Amazon Web Services to run Kubernetes on AWS.*** Amazon EKS automatically manages the availability and scalability of the Kubernetes control plane nodes responsible for scheduling containers, managing application availability, storing cluster data, and other key tasks. 
