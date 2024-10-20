@@ -66,7 +66,7 @@ This is how the cost will be calculated:
 
 1. **For Fargate:**
 
-```math
+```
 Number of tasks or pods: 20 per day * (730 hours in a month / 24 hours in a day) = 608.33 per month
 
 Pricing calculations:
@@ -79,7 +79,7 @@ Fargate cost (monthly): 70.88 USD
 
 ***Total cost = Control Plane Cost + Fargate Cost***
 
-```math
+```
 Control Plane Cost: 73 USD
 Fargate Cost: 70.88 USD
 Total Cost: 143.88 USD
@@ -87,14 +87,14 @@ Total Cost: 143.88 USD
 
 2. **For Worker Nodes:**
 
-```math
+```
 2 instances x 0.096 USD On Demand hourly cost x 730 hours in a month = 140.160000 USD
 On-Demand instances (monthly): 140.160000 USD
 ```
 
 ***Total cost = Control Plane Cost + Worker Nodes Cost***
 
-```math
+```
 Control Plane Cost: 73 USD
 Worker Nodes Cost: 140.160000 USD
 Total Cost: 213.160000 USD
@@ -110,7 +110,7 @@ This is how the cost will be calculated:
 
 1. **For Fargate:**
 
-```math
+```
 Unit conversions management events
 Number of tasks or pods: 20 per day * (730 hours in a month / 24 hours in a day) = 608.33 per month
 Pricing calculations
@@ -123,7 +123,7 @@ Fargate cost (monthly): 708.82 USD
 
 ***Total cost = Control Plane Cost + Fargate Cost***
 
-```math
+```
 Control Plane Cost: 73 USD
 Fargate Cost: 708.82 USD
 Total Cost: 781.82 USD
@@ -131,14 +131,14 @@ Total Cost: 781.82 USD
 
 2. **For Worker Nodes:**
 
-```math
+```
 2 instances x 0.096 USD On Demand hourly cost x 730 hours in a month = 140.160000 USD
 On-Demand instances (monthly): 140.160000 USD
 ```
 
 ***Total cost = Control Plane Cost + Worker Nodes Cost***
 
-```math
+```
 Control Plane Cost: 73 USD
 Worker Nodes Cost: 140.160000 USD
 Total Cost: 213.160000 USD
