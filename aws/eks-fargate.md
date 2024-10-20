@@ -2,6 +2,8 @@
 
 In today's world, where many organizations are moving towards cloud and containerization, **Kubernetes is becoming the go-to platform for doing Container Orchestration**. In this article we'll look at Managed Kubernetes Service provided by AWS called **EKS (Elastic Kubernetes Service)**. EKS is a fully managed service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS. AWS will take of the control plane and we need to take care of the worker nodes. We can create worker nodes using self managed or managed node groups. In either case, we need to pay for the EC2 instances that are running in our account. Even if we don't have fully utilized them, we need to pay for EC2 instances. Let's find out how to optimize the cost of running an EKS cluster using AWS Fargate effectively.
 
+![Faragate vs Worker Nodes](https://github.com/user-attachments/assets/d532ed5f-2261-47cb-9d1c-d9e3cf356fa8)
+
 Before get into the cost saving techniques, I like to explain some basic concepts of EKS and Fargate.
 
 ### What is EKS?
@@ -150,17 +152,58 @@ Here, You can see that Fargate is not cost effective in this case. We need to pa
 
 Navigate to [AWS Pricing Calculator](https://calculator.aws.amazon.com/)
 
+
 1. **For EKS with Fargate:**
 
-// Steps will be added
+![Screenshot 2024-10-20 153859](https://github.com/user-attachments/assets/ba022177-acf4-482d-9b5a-139fa9b431c2)
 
+![Screenshot 2024-10-20 153919](https://github.com/user-attachments/assets/55e22a2e-33df-45c3-831d-10db3ed15495)
+
+![Screenshot 2024-10-20 153942](https://github.com/user-attachments/assets/8452e759-1f8e-4e75-909f-460ae4d35155)
+
+![Screenshot 2024-10-20 153957](https://github.com/user-attachments/assets/d529274a-5b9b-47fd-ae2e-f20770b473b9)
+
+**You can see Per month Cost for EKS Cluster at the Left bottom**<br>
+
+**Let's add Fargate to our Estimate now, I am going to configure my Pod resources(CPU, Memory) based on the Scenarios we considered.**
+
+![Screenshot 2024-10-20 154022](https://github.com/user-attachments/assets/1c8287a7-9c41-433d-8439-3c7b2fcf8cf0)
+
+![Screenshot 2024-10-20 154048](https://github.com/user-attachments/assets/c4932cfa-45bd-4507-affd-ae43537c1968)
+
+![Screenshot 2024-10-20 155017](https://github.com/user-attachments/assets/79cedcfd-5c32-4d11-85c6-ff7ef31f0405)
+
+![Screenshot 2024-10-20 155059](https://github.com/user-attachments/assets/df8c383d-7af5-43ee-bb5c-ca764582ff67)
+
+![Screenshot 2024-10-20 160816](https://github.com/user-attachments/assets/65b0c6a5-5149-448f-b49f-1a687c24e785)
 
 2. **For EKS with Worker Nodes:**
 
-// Steps will be added
+**For worker nodes, we will consider the same pod requirements as Fargate: vCPUs: 2, Memory: 8 GB, and Number of Pods: 20. To meet the requirement of 2 vCPUs and 8 GB of memory, we need to choose the `m5.large` instance type. There is some restriction on Number of Pods can be placed on per EKS node. For 20 Pods one `m5.large` instance will not be enough to accommodate 20 pods, we will need two `m5.large` instances in this case.**<br>
+
+Refer How many Pods can be Placed on Each node: [Click here](https://docs.aws.amazon.com/eks/latest/userguide/choosing-instance-type.html#determine-max-pods)<br>
+
+**Remove Fargate from the total estimate so that we can add our worker nodes estimate to the EKS cluster.**
+
+![Screenshot 2024-10-20 155145](https://github.com/user-attachments/assets/ff77c3a0-82b9-4d3d-8c27-3fe7d7f19be2)
+
+![Screenshot 2024-10-20 191717](https://github.com/user-attachments/assets/3ebd26b5-e5c6-4927-8e8a-c77abda51ae9)
+
+![Screenshot 2024-10-20 155205](https://github.com/user-attachments/assets/bb2ba0d7-a917-4da9-b74c-d03b59293f27)
+
+![Screenshot 2024-10-20 155217](https://github.com/user-attachments/assets/5a2c93c5-212e-46be-b093-aa49745866dc)
+
+![Screenshot 2024-10-20 161829](https://github.com/user-attachments/assets/5a9cc40b-6a6c-45a6-bd40-850dbaf13f22)
+
+![Screenshot 2024-10-20 155234](https://github.com/user-attachments/assets/5aacdc8d-4ada-44f8-b723-077a049bb526)
+
+![Screenshot 2024-10-20 155248](https://github.com/user-attachments/assets/62ef698a-c231-4b6f-8505-5b0a6f8dec56)
+
+![Screenshot 2024-10-20 155400](https://github.com/user-attachments/assets/a4e0c718-d9c2-49ed-b30b-866afb7fdd8c)
+
 
 ### Conclusion:
 
-Just as I mentioned earlier, we can't tell one is best over the other. But for sure if we know when to use which one, we can save the cost effectively. We can use Fargate effectively in some scenarios like Batch Processing, Dev/Test Environments, Microservices, Scheduled Jobs, On-Demand Workloads, Stateless Applications. We can't use Fargate effectively in some scenarios like Stateful Applications, High Performance Workloads, Custom Networking, Custom AMIs, Custom IAM Roles, Custom Security Groups. We need to choose the right option based on our requirements to save the cost effectively.
+Just as I mentioned earlier, we can't tell one is best over the other. But for sure if we know when to use which one, we can save the cost effectively. We need to choose the right option based on our requirements to save the cost effectively.<br>
 
 I hope this article helps you to understand how to optimize the cost of running an EKS cluster using AWS Fargate effectively. If you have any questions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/mathesh-me/). I'm happy to help you.
