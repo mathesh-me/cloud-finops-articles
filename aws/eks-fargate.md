@@ -206,4 +206,14 @@ Refer How many Pods can be Placed on Each node: [Click here](https://docs.aws.am
 
 Just as I mentioned earlier, we can't tell one is best over the other. But for sure if we know when to use which one, we can save the cost effectively. We need to choose the right option based on our requirements to save the cost effectively. I recommend Everyone to try out the AWS Pricing Calculator to get the exact cost for your requirements. Get more Hands-on experience with EKS and Fargate to understand the concepts better.
 
+### For more information:
+
+1. [AWS Pricing Calculator](https://calculator.aws.amazon.com/)
+2. [AWS EKS](https://aws.amazon.com/eks/)
+3. [AWS Fargate](https://aws.amazon.com/fargate/)
+4. [AWS EKS Fargate Profile](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)
+5. [AWS EKS Pricing](https://aws.amazon.com/eks/pricing/)
+6. [AWS Fargate Pricing](https://aws.amazon.com/fargate/pricing/)
+7. [AWS EKS Documentation](https://docs.aws.amazon.com/eks/index.html)
+
 I hope this article helps you to understand how to optimize the cost of running an EKS cluster using AWS Fargate effectively. If you have any questions, feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/mathesh-me/). I'm happy to help you.
