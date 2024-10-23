@@ -163,9 +163,17 @@ Navigate to [AWS Pricing Calculator](https://calculator.aws.amazon.com/)
 
 ![Screenshot 2024-10-20 153957](https://github.com/user-attachments/assets/d529274a-5b9b-47fd-ae2e-f20770b473b9)
 
-**You can see Per month Cost for EKS Cluster Control Plane at the Left bottom**<br>
+**You can see Per month Cost for EKS Cluster Control Plane at the Left bottom. Now, Let's add Fargate to our Estimate now, I am going to configure my Pod resources(CPU, Memory) based on the Scenarios we considered.**
 
-**Let's add Fargate to our Estimate now, I am going to configure my Pod resources(CPU, Memory) based on the Scenarios we considered.**
+*Some of Paramenters you need to consider while calculating the cost for Fargate:*
+
+- Region
+- Operating System
+- vCPUs Architecture
+- Number of Pods
+- Average duration of the pods in hours
+- vCPUs
+- Memory
 
 ![Screenshot 2024-10-20 154022](https://github.com/user-attachments/assets/1c8287a7-9c41-433d-8439-3c7b2fcf8cf0)
 
@@ -184,6 +192,14 @@ Navigate to [AWS Pricing Calculator](https://calculator.aws.amazon.com/)
 Refer How many Pods can be Placed on Each node: [Click here](https://docs.aws.amazon.com/eks/latest/userguide/choosing-instance-type.html#determine-max-pods)<br>
 
 **Remove Fargate from the total estimate so that we can add our worker nodes estimate to the EKS cluster.**
+
+*Some of Paramenters you need to consider while calculating the cost for Worker Nodes:*
+
+- Region
+- Operating System
+- Number of Instances
+- Instance Type
+- Payment Options(Savings Plan, Reserved, On-Demand, Spot)
 
 ![Screenshot 2024-10-20 155145](https://github.com/user-attachments/assets/ff77c3a0-82b9-4d3d-8c27-3fe7d7f19be2)
 
